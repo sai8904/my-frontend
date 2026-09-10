@@ -16,7 +16,7 @@ function CreatePost() {
         setError(null);
 
         try {
-            const response = await fetch("http://localhost:3000/api/posts", {
+            const response = await fetch("https://my-backend-pkcm.onrender.com/api/posts", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

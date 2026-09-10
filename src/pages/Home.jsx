@@ -10,7 +10,7 @@ function Home() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await fetch("http://localhost:3000/api/posts");
+        const response = await fetch("https://my-backend-pkcm.onrender.com/api/posts");
         const data = await response.json();
         setPosts(data);
       } catch (err) {

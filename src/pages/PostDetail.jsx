@@ -16,7 +16,7 @@ function PostDetail() {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const response = await fetch(`http://localhost:3000/api/posts/${id}`);
+        const response = await fetch(`https://my-backend-pkcm.onrender.com/api/posts/${id}`);
         const data = await response.json();
         setPost(data);
       } catch (err) {
@@ -32,7 +32,7 @@ function PostDetail() {
   async function handleSummarize() {
     setSummarizing(true);
     try {
-      const response = await fetch(`http://localhost:3000/api/posts/${id}/summarize`, { method: "POST" });
+      const response = await fetch(`https://my-backend-pkcm.onrender.com/api/posts/${id}/summarize`, { method: "POST" });
       const data = await response.json();
       setSummary(data.summary);
     } catch (err) {
@@ -44,7 +44,7 @@ function PostDetail() {
   async function handleAsk() {
     setAsking(true);
     try {
-      const response = await fetch(`http://localhost:3000/api/posts/${id}/question`, {
+      const response = await fetch(`https://my-backend-pkcm.onrender.com/api/posts/${id}/question`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: userPrompt }),
@@ -65,7 +65,7 @@ function PostDetail() {
   async function handleExplain() {
     setExplaining(true);
     try {
-      const response = await fetch(`http://localhost:3000/api/posts/${id}/explain`, { method: "POST" });
+      const response = await fetch(`https://my-backend-pkcm.onrender.com/api/posts/${id}/explain`, { method: "POST" });
       const data = await response.json();
       setExplanation(data.explanation);
     } catch (err) {
